@@ -61,6 +61,10 @@ figure {
   margin: 0;
 }
 
+h2 {
+    font-size: var(--fs-700);
+}
+
 p {
     line-height: 1.5;
 }
@@ -88,17 +92,20 @@ body {
     place-items: center;
     grid-template-rows: min-content 1fr;
     min-height: 100vh;
+    margin: 1rem;
     overflow-x: hidden;
     background-image: url(./assets/Background.png);
     background-size: cover;
 }
 
-body {
-    margin: 2rem;
-}
-
 section:not(:first-of-type) {
     margin-block: 2rem;
+}
+
+@media (min-width: 768px) {
+    body {
+        margin: 2rem;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -457,12 +464,13 @@ section:not(:first-of-type) {
 .history-heading {
     display: grid;
     place-items: center;
+    text-align: center;
     gap: 1rem
 }
 
 .timeline {
     display: grid;
-    grid-template-columns: 20px 1fr;
+    grid-template-columns: 30px 1fr;
     width: 100%;
     position: relative;
     max-width: 1024px;
@@ -477,9 +485,9 @@ section:not(:first-of-type) {
     margin-right: 3rem;
     grid-row: span 4;
     top: 0;
-    left: 10px;
+    left: 15px;
     z-index: 1000;
-    background: linear-gradient(to top, var(--clr-accent-300), var(--clr-accent-400));
+    background: linear-gradient(to bottom, var(--clr-accent-400), var(--clr-accent-300));
     transform-origin: top;
     scale: 1 0;
     animation: scroll-watcher linear;
@@ -547,7 +555,7 @@ section:not(:first-of-type) {
     position: relative;
     width: 100%;
     padding: 3rem 2rem;
-    margin: 2rem 1rem;
+    margin-block: 2rem;
 
     animation: fadeInLeft 2s;
     animation-timeline: view(90% 10%);
@@ -565,8 +573,9 @@ section:not(:first-of-type) {
     margin-bottom: 0.5rem;
 }
 
-.checkpoint > div > h2 {
+.checkpoint h3 {
     padding-block: 0.5rem;
+    font-size: var(--fs-600);
 }
 
 .checkpoint:nth-child(2) {
@@ -582,10 +591,10 @@ section:not(:first-of-type) {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid var(--clr-accent-400);
-    background-color: var(--clr-accent-300);
-    top: 20px;
-    left: -50px;
+    border: 2px solid var(--clr-accent-300);
+    background-color: hsl(var(--clr-background-secondary));
+    top: 30px;
+    left: -35px;
     z-index: 3000;
     position: absolute;
 }
@@ -649,7 +658,7 @@ section:not(:first-of-type) {
     display: grid;
     justify-items: center;
     justify-self: center;
-    padding: 3.5rem 1rem;
+    padding: 3.5rem 1rem 2rem;
     grid-template-columns: 1fr;
     max-width: max-content;
 }
@@ -805,12 +814,13 @@ section:not(:first-of-type) {
 .projects {
     display: grid;
     gap: 4rem;
-    padding-inline: 5rem;
     width: 100%;
 }
 
 .projects-intro {
     display: grid;
+    justify-self: center;
+    text-align: center;
     gap: 0.75rem;
     max-width: 55ch;
 }
@@ -866,9 +876,21 @@ section:not(:first-of-type) {
     border-radius: 1.5rem;
 }
 
+@media (min-width: 768px) {
+    .projects {
+        padding-inline: 2rem;
+    }
+}
+
 @media (min-width: 1024px) {
     .projects {
         gap: 6rem;
+        padding-inline: 5rem;
+    }
+
+    .projects-intro {
+        justify-self: left;
+        text-align: left;
     }
 
     .project {
@@ -907,7 +929,7 @@ section:not(:first-of-type) {
 
 .contact {
     display: grid;
-    padding: 3.5rem;
+    padding: 2rem 1rem 0;
     gap: 2rem;
     width: 100%;
     max-width: 1440px;
@@ -923,10 +945,6 @@ section:not(:first-of-type) {
     font-size: var(--fs-800);
     width: fit-content;
 }
-
-/* .contact-info p {
-    max-width: 40ch;
-} */
 
 .contact-info img {
     width: 30px;
@@ -964,11 +982,26 @@ section:not(:first-of-type) {
     color: hsl(var(--clr-white));
 }
 
+@media (min-width: 768px) {
+    .contact {
+        padding: 3.5rem;
+    }
+}
+
 @media (min-width: 1024px) {
     .contact {
         grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        margin-inline: auto;
+        gap: 5rem;
+    }
+
+    .contact-info p {
+        width: 40ch;
+    }
+}
+
+@media (min-width: 1440px) {
+    .contact {
+        width: 1300px;
     }
 }
   
