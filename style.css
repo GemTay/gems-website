@@ -383,6 +383,7 @@ section:not(:first-of-type) {
 .languages-container {
     display: grid;
     place-items: center;
+    text-align: center;
     gap: 1rem;
 }
 
