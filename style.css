@@ -217,6 +217,13 @@ section:not(:first-of-type) {
 
 .mobile-nav-toggle {
     display: none;
+    width: 1.25rem;
+}
+
+@media (min-width: 400px) {
+    .mobile-nav-toggle {
+        width: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -248,7 +255,6 @@ section:not(:first-of-type) {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        width: 1.5rem;
         aspect-ratio: 1;
       }
     
@@ -489,11 +495,6 @@ section:not(:first-of-type) {
     left: 15px;
     z-index: 1000;
     background: linear-gradient(to bottom, var(--clr-accent-400), var(--clr-accent-300));
-    transform-origin: top;
-    scale: 1 0;
-    animation: scroll-watcher linear;
-    animation-timeline: view(30%);
-    animation-fill-mode: forwards;
 }
 
 .scroll-watcher-cp:first-of-type {
@@ -511,56 +512,10 @@ section:not(:first-of-type) {
     left: 10px;
 }
 
-
-@keyframes scroll-watcher {
-    to { scale: 1 1; }
-}
-
-@keyframes checkpoint-watcher {
-    to { scale: 1 1; }
-}
-
-@keyframes fadeInLeft {
-    0% {
-        /* -webkit-transform: translateX(100%); */
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    100% {
-        /* -webkit-transform: translateX(0%); */
-      transform: translateX(0%);
-      opacity: 1;
-    }
-}
-
-@keyframes fadeInRight {
-    0% {
-        /* -webkit-transform: translateX(-100%); */
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    100% {
-        /* -webkit-transform: translateX(0%); */
-      transform: translateX(0%);
-      opacity: 1;
-    }
-}
-
 .experience-container {
     display: relative;
     place-items: center;
     gap: 1rem;
-}
-
-.checkpoint {
-    position: relative;
-    width: 100%;
-    padding: 3rem 2rem;
-    margin-block: 2rem;
-
-    animation: fadeInLeft 2s;
-    animation-timeline: view(90% 10%);
-    animation-fill-mode: both;
 }
 
 .checkpoint > div {
@@ -643,13 +598,6 @@ section:not(:first-of-type) {
     .checkpoint:nth-child(even)::before {
         left: auto;
         right: -35px;
-    }
-
-    .checkpoint:nth-child(even) {
-        justify-self: end;
-        animation: fadeInRight ;
-        animation-timeline: view(90% 10%);
-        animation-fill-mode: both;
     }
 }
 
