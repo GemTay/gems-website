@@ -90,7 +90,7 @@ body {
     
     display: grid;
     place-items: center;
-    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr;
     min-height: 100vh;
     margin: 1rem;
     overflow-x: hidden;
@@ -953,6 +953,21 @@ section:not(:first-of-type) {
         width: 1300px;
     }
 }
+
+/* success page */
+
+.email-success-container {
+    display: grid;
+    text-align: center;
+    place-items: center;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+}
+
+.email-success-container img {
+    width: 60px;
+}
   
 /* circles */
 
@@ -1176,3 +1191,4 @@ section:not(:first-of-type) {
         bottom: -30%;
     }
 }
+
