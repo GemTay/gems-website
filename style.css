@@ -518,7 +518,7 @@ section:not(:first-of-type) {
     gap: 1rem;
 }
 
-.checkpoint > div {
+.checkpoint div {
     display: grid;
     align-items: center;
     gap: 0.5rem;
