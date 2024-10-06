@@ -5,7 +5,6 @@
     --clr-accent-300: hsl(288, 86%, 75%);
     --clr-accent-400: hsl(58, 85%, 58%);
 
-
     --clr-background-primary: 240, 36%, 54%;
     --clr-background-secondary: 240, 38%, 25%;
 
@@ -518,6 +517,12 @@ section:not(:first-of-type) {
     gap: 1rem;
 }
 
+.checkpoint {
+    position: relative;
+    padding: 3rem 2rem;
+    margin-block: 1.5rem;
+}
+
 .checkpoint div {
     display: grid;
     align-items: center;
@@ -553,6 +558,37 @@ section:not(:first-of-type) {
     left: -35px;
     z-index: 3000;
     position: absolute;
+}
+
+.from-left {
+    transform: translateX(-100%);
+  }
+  
+.from-right {
+    transform: translateX(100%);
+}
+
+.from-left,
+.from-right {
+    transition: opacity 250ms ease-in, transform 500ms ease-in-out;
+    opacity: 0;
+}
+
+.from-left.in-view,
+.from-right.in-view {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Slide out when scrolling back up (reverse animation) */
+.from-left.out-of-view {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.from-right.out-of-view {
+    opacity: 0;
+    transform: translateX(100%);
 }
 
 @media (min-width: 768px) {
@@ -660,10 +696,6 @@ section:not(:first-of-type) {
 
 .flip-card__back {
     transform: rotateY(.5turn);
-}
-
-.flip-card__front img {
-    margin-block: 1rem;
 }
 
 .flip-card__front img,

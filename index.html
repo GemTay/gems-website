@@ -13,58 +13,19 @@
     <link rel="stylesheet" href="./style.css">
     <script src="./navigation.js" defer></script>
     <script src="./flip-card.js" defer></script>
+    <script src="./animate-timeline.js" defer></script>
     <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
     <style>
         @keyframes scroll-watcher {
             to { scale: 1 1; }
         }
 
-        @keyframes fadeInLeft {
-            0% {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0%);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInRight {
-            0% {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0%);
-                opacity: 1;
-            }
-        }
-
         .scroll-watcher {
             transform-origin: top;
             scale: 1 0;
             animation: scroll-watcher linear;
-            animation-timeline: view(30%);
             animation-fill-mode: forwards;
-        }
-
-        .checkpoint {
-            position: relative;
-            padding: 3rem 2rem;
-            margin-block: 1.5rem;
-
-            animation: fadeInLeft 2s;
-            animation-timeline: view(90% 10%);
-            animation-fill-mode: both;
-        }
-
-        @media (min-width: 768px) {
-            .checkpoint:nth-child(even) {
-                animation: fadeInRight 2s;
-                animation-timeline: view(90% 10%);
-                animation-fill-mode: both;
-            }
+            animation-timeline: view(30%);
         }
     </style>
 </head>
@@ -151,7 +112,15 @@
             <a name="about"></a>
             <p class="subtitle uppercase">Introduction</p>
             <h2>About me</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <p>
+                I am a passionate and dedicated software developer with over five years of experience building <span class="linear-gradient">scalable, user-centered</span> web applications. My expertise lies in backend development with technologies like <span class="linear-gradient">PHP & Golang</span>, however I’m also enthusiastic about expanding my skills in frontend development, particularly with JavaScript frameworks such as <span class="linear-gradient">React and Vue</span>.
+            </p>
+            <p>
+                For the past five years, I have worked with the Ministry of Justice in the United Kingdom, where I played a key role in developing, deploying, and <span class="linear-gradient">digitally transforming</span> critical justice systems, resulting in more efficient service delivery and positively impacting the lives of <span class="linear-gradient">millions of citizens</span> by improving access to essential legal and government services.
+            </p>
+
+            <p>
+                Outside of coding, I’m passionate about fitness, travelling, and cooking, especially exploring creative vegan recipes that reflect my love for animals. I also enjoy reading and <span class="linear-gradient">continuously learning</span>, both in tech and beyond.
             </p>
         </div>
     </section>
@@ -240,7 +209,7 @@
 
         <div class="timeline">
             <div class="scroll-watcher"></div>
-            <div class="checkpoint cp-1 glassmorphism">
+            <div class="checkpoint cp-1 glassmorphism slide-in from-right test-1">
                 <div>
                     <img
                     src="./assets/experience/moj.svg"
@@ -252,7 +221,7 @@
                     <p>Birmingham</p>
                 </div>
             </div>
-            <div class="checkpoint cp-2 glassmorphism">
+            <div class="checkpoint cp-2 glassmorphism slide-in from-right">
                 <div>
                     <img
                     src="./assets/experience/moj.svg"
@@ -264,7 +233,7 @@
                     <p>Birmingham</p>
                 </div>
             </div>
-            <div class="checkpoint cp-3 glassmorphism">
+            <div class="checkpoint cp-3 glassmorphism slide-in from-right">
                 <div>
                     <img
                     src="./assets/experience/bcu.svg"
@@ -276,7 +245,7 @@
                     <p>Birmingham</p>
                 </div>
             </div>
-            <div class="checkpoint cp-4 glassmorphism">
+            <div class="checkpoint cp-4 glassmorphism slide-in from-right">
                 <div>
                     <img
                     src="./assets/experience/school.svg"
